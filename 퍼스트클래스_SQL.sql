@@ -122,5 +122,3 @@ CREATE TABLE report (
     actor_review_code INTEGER NOT NULL,
     movie_review_code INTEGER NOT NULL
 );
-r_code 
-);
