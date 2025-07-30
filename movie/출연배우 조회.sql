@@ -1,7 +1,7 @@
 -- 영화 출연배우 조회
 DELIMITER //
 
-CREATE OR REPLACE PROCEDURE viewCasts(
+CREATE OR REPLACE PROCEDURE searchCasts(
 	IN title VARCHAR(100)
 )
 BEGIN
