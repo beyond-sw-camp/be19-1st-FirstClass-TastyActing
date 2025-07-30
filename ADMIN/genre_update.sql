@@ -1,9 +1,10 @@
 -- 장르 수정
+SELECT * FROM genre;
 
 delimiter //
 CREATE OR REPLACE PROCEDURE updateGenre(
-     IN g_code INTEGER,
-	  IN g_name VARCHAR(50),
+       IN g_code INTEGER
+	  , IN g_name VARCHAR(50),
 )
 BEGIN
    REPLACE
@@ -20,4 +21,5 @@ BEGIN
 END //
 delimiter ;
 
-CALL updateActor(47, 'eman');
+CALL updateGenre(11, '추리');
+

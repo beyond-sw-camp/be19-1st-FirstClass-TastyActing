@@ -2,8 +2,8 @@
 
 delimiter //
 CREATE OR REPLACE PROCEDURE deleteGenre(
-     IN g_code INTEGER,
-     IN g_name VARCHAR(50)
+       IN g_code INTEGER
+	  , IN g_name VARCHAR(50)
 )
 BEGIN
     DELETE
@@ -17,4 +17,5 @@ BEGIN
 END //
 delimiter ;
 
-CALL deleteGenre(NULL, 'name');
+CALL deleteGenre(2, '액션');
+

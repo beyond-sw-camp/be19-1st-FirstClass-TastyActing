@@ -3,8 +3,8 @@ SELECT * FROM genre;
 
 delimiter //
 CREATE OR REPLACE PROCEDURE insertGenre(
-     IN g_code INTEGER,
-     IN g_name VARCHAR(50)
+       IN g_code INTEGER
+	  , IN g_name VARCHAR(50)
 )
 BEGIN
     INSERT
@@ -26,4 +26,5 @@ BEGIN
 END //
 delimiter ;
 
-CALL insertGenre(NULL, 'name');
+CALL insertGenre(12, '스포츠');
+

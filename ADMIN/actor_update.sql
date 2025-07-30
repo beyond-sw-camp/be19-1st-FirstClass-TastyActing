@@ -1,15 +1,16 @@
 -- 배우 수정
+SELECT * FROM actor;
 
 delimiter //
 CREATE OR REPLACE PROCEDURE updateActor(
-     IN p_code INTEGER,
-	  IN p_name VARCHAR(50), 
-	  IN p_information VARCHAR(255),    
-	  IN p_is_foreigner BOOLEAN,    
-	  IN p_filename VARCHAR(255), 
-	  IN p_re_name VARCHAR(255), 
-	  IN p_path VARCHAR(255), 
-	  IN p_date DATETIME
+       IN p_code INTEGER
+	  , IN p_name VARCHAR(50)
+	  , IN p_information VARCHAR(255)
+	  , IN p_is_foreigner BOOLEAN
+	  , IN p_filename VARCHAR(255)
+	  , IN p_re_name VARCHAR(255)
+	  , IN p_path VARCHAR(255)
+	  , IN p_date DATETIME
 )
 BEGIN
    REPLACE
@@ -38,4 +39,4 @@ BEGIN
 END //
 delimiter ;
 
-CALL updateActor(null, 'eman', 'noitamrofni', 1, 'gpj.6erutcip', NULL, NULL, NULL);
+CALL updateActor(4, '전지현', '태혜지의 지', 0, 'jeon_jihyun.jpg', 'jeon_jihyun.jpg', '/uploads/actors/', NULL);

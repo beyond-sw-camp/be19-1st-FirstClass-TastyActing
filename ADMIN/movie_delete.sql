@@ -29,3 +29,4 @@ END //
 delimiter ;
 
 CALL deleteMovie(16, 'F1:더 무비');
+

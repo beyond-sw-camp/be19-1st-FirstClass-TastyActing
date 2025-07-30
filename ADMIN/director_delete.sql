@@ -1,9 +1,10 @@
 -- 감독 삭제
+SELECT * FROM director;
 
 delimiter //
 CREATE OR REPLACE PROCEDURE deleteDirector(
-     IN d_code INTEGER,
-     IN d_name VARCHAR(50)
+       IN d_code INTEGER
+	  , IN d_name VARCHAR(50)
 )
 BEGIN
    DELETE
@@ -22,4 +23,5 @@ BEGIN
 END //
 delimiter ;
 
-CALL deleteActor(null, 'eman');
+CALL deleteDirector(3, '이병헌');
+

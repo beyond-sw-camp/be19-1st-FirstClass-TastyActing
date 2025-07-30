@@ -3,12 +3,12 @@ SELECT * FROM director;
 
 delimiter //
 CREATE OR REPLACE PROCEDURE insertDirector(
-    IN d_code INTEGER,
-	 IN d_name VARCHAR(50),
-    IN d_filename VARCHAR(255),
-    IN d_re_name VARCHAR(255),
-    IN d_path VARCHAR(255),
-    IN d_date DATETIME
+      IN d_code INTEGER
+	 , IN d_name VARCHAR(50)
+	 , IN d_filename VARCHAR(255)
+	 , IN d_re_name VARCHAR(255)
+	 , IN d_path VARCHAR(255)
+	 , IN d_date DATETIME
 )
 BEGIN
     INSERT 
@@ -43,4 +43,5 @@ BEGIN
 END //
 delimiter ;
 
-CALL insertActor(NULL,'name', 'picture6.jpg', 're_name', 'path', NULL);
+CALL insertDirector(12,'Martin Scorsese', 'martinscorsese.jpg', 'martinscorsese.jpg', '/uploads/directors', NULL);
+

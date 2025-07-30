@@ -66,4 +66,4 @@ BEGIN
 END //
 delimiter ;
 
-CALL insertMovie(16,'F1:더 무비', 2025-06-25, 0, '12세', 1, 'f1themovie.jpg', 'f1themovie_2025', '/uploads/moives/', NULL, 7, 1);
+CALL insertMovie(16,'F1:더 무비', 2025-06-25, 0, '12세', 1, 'f1themovie.jpg', 'f1themovie_2025', '/uploads/moives/', NULL, 11, 2);

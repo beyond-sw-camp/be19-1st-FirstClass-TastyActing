@@ -1,15 +1,16 @@
 -- 배우 등록
+SELECT * FROM actor;
 
 delimiter //
 CREATE OR REPLACE PROCEDURE insertActor(
-    IN p_code INTEGER,
-	 IN p_name VARCHAR(50),
-    IN p_information VARCHAR(255),
-    IN p_is_foreigner BOOLEAN,
-    IN p_filename VARCHAR(255),
-    IN p_re_name VARCHAR(255),
-    IN p_path VARCHAR(255),
-    IN p_date DATETIME
+       IN p_code INTEGER
+	  , IN p_name VARCHAR(50)
+	  , IN p_information VARCHAR(255)
+	  , IN p_is_foreigner BOOLEAN
+	  , IN p_filename VARCHAR(255)
+	  , IN p_re_name VARCHAR(255)
+	  , IN p_path VARCHAR(255)
+	  , IN p_date DATETIME
 )
 BEGIN
     INSERT 
@@ -49,6 +50,6 @@ BEGIN
 END //
 delimiter ;
 
-CALL insertActor(NULL,'name', 'information', 0, 'picture6.jpg', 're_name', 'path', NULL);
+CALL insertActor(46,'박정민', '아차차 우원박', 0, 'picture6.jpg', 'rename_picture6.jpg', '/uploads/actors/', NULL);
 
 

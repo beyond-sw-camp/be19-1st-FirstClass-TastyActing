@@ -51,4 +51,4 @@ BEGIN
 END //
 delimiter ;
 
-CALL updateActor(19, '머니볼', 2011-11-17, 0, '12세', 1,'moneyball.jpg', 'moneyball_2011.jpg', '/uploads/movies/', NULL, 6, 3);
+CALL updateMovie(19, '머니볼', 2011-11-17, 0, '12세', 1,'moneyball.jpg', 'moneyball_2011.jpg', '/uploads/movies/', NULL, 6, 3);

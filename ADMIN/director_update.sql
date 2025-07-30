@@ -1,13 +1,14 @@
 -- 감독 수정
+SELECT * FROM director;
 
 delimiter //
 CREATE OR REPLACE PROCEDURE updateDirector(
-     IN d_code INTEGER,
-	  IN d_name VARCHAR(50), 
-	  IN d_filename VARCHAR(255), 
-	  IN d_re_name VARCHAR(255), 
-	  IN d_path VARCHAR(255), 
-	  IN d_date DATETIME
+       IN d_code INTEGER
+	  , IN d_name VARCHAR(50)
+	  , IN d_filename VARCHAR(255)
+	  , IN d_re_name VARCHAR(255)
+	  , IN d_path VARCHAR(255)
+	  , IN d_date DATETIME
 )
 BEGIN
    REPLACE
@@ -32,4 +33,5 @@ BEGIN
 END //
 delimiter ;
 
-CALL updateActor(null, 'eman', 'gpj.6erutcip', NULL, NULL, NULL);
+CALL updateDirector(11, 'Joseph Kosinski', 'josephkosinski.jpg', 'josephkosinski.jpg', '/uploads/directors/', NULL);
+
