@@ -2,14 +2,14 @@
 
 delimiter //
 CREATE OR REPLACE PROCEDURE deleteActor(
-     IN p_code INTEGER,
-     IN p_name VARCHAR(50)
+       IN a_code INTEGER
+	  , IN a_name VARCHAR(50)
 )
 BEGIN
    DELETE
      FROM actor
-    WHERE code = p_code
-	    OR name = p_name;
+    WHERE code = a_code
+	    OR name = a_name;
 	    
 	SELECT 
 	       code AS '배우코드'  
@@ -24,4 +24,4 @@ BEGIN
 END //
 delimiter ;
 
-CALL deleteActor(null, 'eman');
+CALL deleteActor(46, '박정민');
