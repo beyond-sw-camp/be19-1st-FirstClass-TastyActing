@@ -76,7 +76,7 @@ CREATE TABLE movie_actors (
 
 CREATE TABLE user (
     code INTEGER PRIMARY KEY AUTO_INCREMENT,
-    id VARCHAR(50) NOT NULL,
+    id VARCHAR(50) NOT NULL unique,
     pw VARCHAR(50) NOT NULL,
     name VARCHAR(50) NOT NULL,
     birth_date DATE NOT NULL,
@@ -155,10 +155,8 @@ CREATE TABLE likes (
     movie_review_code INTEGER NULL,
     actor_review_code INTEGER NULL,
     user_code INTEGER NOT NULL,
-    comment_code INTEGER NOT NULL,
     FOREIGN KEY (movie_review_code) REFERENCES movie_review(CODE),
     FOREIGN KEY (actor_review_code) REFERENCES actor_review(CODE),
-    FOREIGN KEY (user_code) REFERENCES user(CODE),
-    FOREIGN KEY (comment_code) REFERENCES comment(CODE)
+    FOREIGN KEY (user_code) REFERENCES user(CODE)
 );
 
