@@ -15,3 +15,11 @@ END //
 DELIMITER ;
 
 CALL searchDirector('기생충'); 
+
+-- 감독별 필모그래피 조회
+SELECT 
+  b.name AS 감독명,
+  GROUP_CONCAT(a.name SEPARATOR ', ') AS '필모그래피'
+FROM movie a
+JOIN director b ON a.director_code = b.code
+GROUP BY b.name;
