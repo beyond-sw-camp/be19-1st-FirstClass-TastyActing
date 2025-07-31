@@ -8,4 +8,3 @@
     SET NAME = '배추도사'
   WHERE id = 'user1';
  
- SELECT * FROM user;

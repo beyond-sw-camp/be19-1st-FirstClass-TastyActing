@@ -13,6 +13,4 @@ DELIMITER ;
 
 CALL deleteReports(1);
 
--- SELECT * FROM report
--- WHERE reporter_CODE = 1;
 

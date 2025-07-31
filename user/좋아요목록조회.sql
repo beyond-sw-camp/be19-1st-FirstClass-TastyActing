@@ -8,23 +8,5 @@ SELECT
   JOIN user b ON a.user_code = b.code
   left JOIN movie_review c ON a.movie_review_code = c.code
   left JOIN actor_review d ON a.actor_review_code = d.code
- WHERE a.is_liked = TRUE AND a.user_code = 1;
+ WHERE a.is_liked = TRUE AND a.user_code = 5;
  
-
-
--- 1. 영화 리뷰에 좋아요
-INSERT INTO likes (
-    is_liked, user_code, movie_review_code, actor_review_code
-) VALUES 
-(TRUE, 1, 1, NULL), 
-(TRUE, 1, 1, NULL);
-
--- 2. 배우 리뷰에 좋아요
-INSERT INTO likes (
-    is_liked, user_code, movie_review_code, actor_review_code
-) VALUES 
-(TRUE, 1, NULL, 1),
-(TRUE, 1, NULL, 2);
-
-SELECT * FROM movie_review;
-SELECT * FROM movie;
