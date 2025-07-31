@@ -2,18 +2,18 @@
 
 delimiter //
 CREATE OR REPLACE PROCEDURE insertGenre(
-	    IN g_name VARCHAR(50)
+       IN g_name VARCHAR(50)
 )
 BEGIN
-    INSERT
-      INTO genre
-    (
-			  NAME
-    )
-    values
-    (
-           g_name
-    );  
+   INSERT
+     INTO genre
+   (
+          NAME
+   )
+   VALUES
+   (
+          g_name
+   );  
 END //
 delimiter ;
 

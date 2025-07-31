@@ -3,13 +3,13 @@
 delimiter //
 CREATE OR REPLACE PROCEDURE deleteDirector(
        IN d_code INTEGER
-	  , IN d_name VARCHAR(50)
+     , IN d_name VARCHAR(50)
 )
 BEGIN
    DELETE
      FROM director
     WHERE code = d_code
-	    OR name = d_name;      
+      AND name = d_name;      
 END //
 delimiter ;
 

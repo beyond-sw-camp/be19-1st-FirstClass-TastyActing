@@ -1,6 +1,5 @@
 -- 리뷰 및 댓글 삭제(신고5회 이상 받은)
 
-
 -- 영화 리뷰 삭제
 DELETE
   FROM movie_review
@@ -10,11 +9,13 @@ DELETE
 DELETE
   FROM actor_review
  WHERE report_count >= 5;
- 
+
 -- 댓글 리뷰 삭제
 DELETE
   FROM comment
- WHERE report_count >= 5;  
+ WHERE report_count >= 5;
+
+  
 
 
 

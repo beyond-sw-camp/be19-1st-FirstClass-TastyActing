@@ -9,7 +9,7 @@ BEGIN
    DELETE
      FROM movie
     WHERE code = m_code
-	    OR name = m_name;     
+      AND name = m_name;     
 END //
 delimiter ;
 

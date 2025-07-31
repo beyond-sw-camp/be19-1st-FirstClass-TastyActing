@@ -4,23 +4,23 @@ delimiter //
 CREATE OR REPLACE PROCEDURE insertMovie(
        IN m_name VARCHAR(50)
      , IN m_release_date DATE
-     , IN m_score DOUBLE
-     , IN m_rating VARCHAR(50)
-     , IN m_is_released BOOLEAN
-     , IN m_filename VARCHAR(255)
-     , IN m_re_name VARCHAR(255)
-     , IN m_path VARCHAR(255)
-     , IN m_date DATETIME
-     , IN m_director_code INTEGER
-     , IN m_genre_code INTEGER
+	  , IN m_score DOUBLE
+	  , IN m_rating VARCHAR(50)
+	  , IN m_is_released BOOLEAN
+	  , IN m_filename VARCHAR(255)
+	  , IN m_re_name VARCHAR(255)
+	  , IN m_path VARCHAR(255)
+	  , IN m_date DATETIME
+	  , IN m_director_code INTEGER
+	  , IN m_genre_code INTEGER
 )
 BEGIN
    INSERT 
-	  INTO movie
-	(
-		    name
-	     , release_date
-		  , score
+     INTO movie
+   (
+          NAME
+        , release_date
+        , score
 		  , rating
 		  , is_released
 		  , filename
@@ -31,19 +31,19 @@ BEGIN
 		  , genre_code
    )
    VALUES 
-	(
-		    m_name
-		  , m_release_date
+   (
+          m_name
+        , m_release_date
 		  , m_score
 		  , m_rating
 		  , m_is_released
-	  	  , m_filename
+		  , m_filename
 		  , m_re_name
 		  , m_path
 		  , m_date
 		  , m_director_code
 		  , m_genre_code
-    );
+   );
 END //
 delimiter ;
 
