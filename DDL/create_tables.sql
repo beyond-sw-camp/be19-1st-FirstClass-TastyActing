@@ -83,6 +83,7 @@ CREATE TABLE user (
     status VARCHAR(50) NOT NULL DEFAULT 'normal',
     expires_at DATE NULL,
     report_count INTEGER NOT NULL DEFAULT 0,
+    like_count INTEGER NOT NULL DEFAULT 0,
     my_number VARCHAR(50) NOT NULL,
     role_code INTEGER NOT NULL,
     level_code INTEGER NOT NULL,
@@ -99,7 +100,6 @@ CREATE TABLE movie_review (
     number INTEGER NOT NULL DEFAULT 0,
     user_code INTEGER NOT NULL,
     movie_code INTEGER NOT NULL,
-    actor_code INTEGER NOT NULL,
     FOREIGN KEY (user_code) REFERENCES user(CODE),
     FOREIGN KEY (movie_code) REFERENCES movie(CODE)
 );
@@ -136,7 +136,7 @@ CREATE TABLE report (
     code INTEGER PRIMARY KEY AUTO_INCREMENT,
     reason VARCHAR(255) NULL,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    is_processed BOOLEAN NOT NULL,
+    is_processed BOOLEAN NOT NULL DEFAULT FALSE,
     reporter_code INTEGER NOT NULL,
     actor_review_code INTEGER,
     movie_review_code INTEGER,
