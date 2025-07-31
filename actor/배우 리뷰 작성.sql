@@ -6,7 +6,9 @@ INSERT INTO actor_review (
     actor_code,  -- 배우코드
     user_code)   -- 작성자 회원코드
 SELECT  4.5,'연기가 정말 인상 깊었어요!',2,2,3
-WHERE NOT EXISTS (
-    SELECT 1 FROM actor_review
-    WHERE user_code = 3 AND movie_code = 7 AND actor_code = 4
-);	
+ WHERE NOT EXISTS (SELECT 1 
+                     FROM actor_review
+                    WHERE user_code = 3 
+                      AND movie_code = 7 
+                      AND actor_code = 4
+                  );	
