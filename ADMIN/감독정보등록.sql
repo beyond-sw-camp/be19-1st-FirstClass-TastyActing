@@ -1,4 +1,4 @@
--- 감독 등록
+-- 감독정보등록
 
 delimiter //
 CREATE OR REPLACE PROCEDURE insertDirector(

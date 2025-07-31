@@ -1,4 +1,4 @@
--- 배우 등록
+-- 배우정보등록
 
 delimiter //
 CREATE OR REPLACE PROCEDURE insertActor(
