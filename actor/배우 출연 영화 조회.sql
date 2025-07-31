@@ -1,17 +1,17 @@
 -- 배우 출연 영화 조회
 SELECT
-    g.code  AS genre_code,
-    g.name  AS genre_name,
-    m.code  AS movie_code,
-    m.name  AS movie_name,
-    m.release_date,
-    m.rating,
-    m.score
-  FROM movie_actors ma
-  JOIN movie m  ON m.code = ma.movie_code
-  JOIN genre g  ON g.code = m.genre_code
- WHERE ma.actor_code = 41         -- 배우 선택
-   AND g.code = 8                 -- 장르 선택 시
--- AND m.is_released = 1          -- 출시된 영화만 보여줄지 선택
- ORDER BY g.name, m.release_date DESC, m.name;
+    a.code  AS '장르코드',
+    a.name  AS '장르명',
+    b.code  AS '영화코드',
+    b.name  AS '영화명',
+    b.release_date AS '개봉일자',
+    b.rating AS '상영등급',
+    b.score AS '평점'
+  FROM movie_actors c
+  JOIN movie b  ON b.code = c.movie_code
+  JOIN genre a  ON a.code = b.genre_code
+ WHERE c.actor_code = 1         -- 배우 선택
+   AND a.code = 1                 -- 장르 선택 시
+-- AND b.is_released = 1          -- 출시된 영화만 보여줄지 선택
+ ORDER BY a.name, b.release_date DESC, b.name;
  

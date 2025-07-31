@@ -6,23 +6,23 @@ CREATE or replace PROCEDURE ActorReviewByGenre(
 )
 BEGIN
     SELECT
-        g.name AS genre_name,
-        a.name AS actor_name,
-        m.name AS movie_name,
-        ar.score AS review_score,
-        ar.content AS review_content
+        a.name AS '장르명',
+        b.name AS '배우명',
+        c.name AS '영화명',
+        d.score AS '평점',
+        d.content AS '내용'
     FROM
-        actor_review ar
+        actor_review d
     JOIN
-        actor a ON ar.actor_code = a.code
+        actor b ON d.actor_code = b.code
     JOIN
-        movie m ON ar.movie_code = m.code
+        movie c ON d.movie_code = c.code
     JOIN
-        genre g ON m.genre_code = g.code
+        genre a ON c.genre_code = a.code
     WHERE
-        g.code = in_genre_code AND a.code = in_actor_code  -- 장르와 배우 코드를 모두 사용해 필터링
+        a.code = in_genre_code AND b.code = in_actor_code  -- 장르와 배우 코드를 모두 사용해 필터링
     ORDER BY
-        m.name, ar.date DESC;
+        c.name, d.date DESC;
 END //
 
 DELIMITER ;
