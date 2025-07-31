@@ -26,7 +26,6 @@ VALUES
 ('user10', 'user10', 'user10', '1990-01-01', 'normal', 010-1111-1120, 1, 2);
 
 
-DESC USER;
 -- 장르 데이터
  INSERT INTO genre (name) VALUES
  ('드라마'),
