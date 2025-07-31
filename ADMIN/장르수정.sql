@@ -1,5 +1,4 @@
 -- 장르 수정
-SELECT * FROM genre;
 
 delimiter //
 CREATE OR REPLACE PROCEDURE updateGenre(
@@ -13,11 +12,7 @@ BEGIN
     (
            g_code
          , g_name
-    );
-    SELECT
-           code AS '장르코드'
-         , name AS '장르명'
-      FROM genre; 
+    ); 
 END //
 delimiter ;
 

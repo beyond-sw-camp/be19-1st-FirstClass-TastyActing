@@ -1,5 +1,4 @@
--- 영화 수정
-SELECT * FROM movie;
+-- 영화정보수정
 
 delimiter //
 CREATE OR REPLACE PROCEDURE updateMovie(
@@ -21,8 +20,7 @@ BEGIN
       INTO movie 
     VALUES
     (
-          m_code
-		  , m_name
+		    m_name
 		  , m_release_date
 		  , m_score
 		  , m_rating
@@ -34,21 +32,7 @@ BEGIN
 		  , m_director_code
 		  , m_genre_code
     );
-    SELECT
-	       code AS '영화코드'
-		  , name AS '영화이름'
-		  , release_date AS '개봉일'
-		  , score AS '평점'
-		  , rating AS '관람등급'
-		  , is_released AS '개봉여부'
-		  , filename AS '파일명'
-		  , re_name AS '재설정 파일명'
-		  , path AS '경로'
-		  , date AS '업로드시간'
-		  , director_code AS '감독코드'
-		  , genre_code AS '장르코드'
-	  FROM movie;
 END //
 delimiter ;
 
-CALL updateMovie(19, '머니볼', 2011-11-17, 0, '12세', 1,'moneyball.jpg', 'moneyball_2011.jpg', '/uploads/movies/', NULL, 6, 3);
+CALL updateMovie('머니볼', 2011-11-17, 0, '12세', 1,'moneyball.jpg', 'moneyball_2011.jpg', '/uploads/movies/', NULL, 6, 3);

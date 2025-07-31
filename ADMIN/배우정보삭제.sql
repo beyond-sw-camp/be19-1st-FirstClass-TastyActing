@@ -1,4 +1,4 @@
--- 배우 삭제
+-- 배우정보삭제
 
 delimiter //
 CREATE OR REPLACE PROCEDURE deleteActor(
@@ -9,19 +9,8 @@ BEGIN
    DELETE
      FROM actor
     WHERE code = a_code
-	    OR name = a_name;
-	    
-	SELECT 
-	       code AS '배우코드'  
-        , name AS '배우이름' 
-        , information AS '배우정보'
-        , is_foreigner AS '내/외국인여부'
-        , filename AS '파일명'
-        , re_name AS '재설정 파일명'
-        , path AS '경로'
-        , DATE AS '업로드시간'
-	  FROM actor;       
+	    OR name = a_name;       
 END //
 delimiter ;
 
-CALL deleteActor(46, '박정민');
+CALL deleteActor(5, '장혜진');

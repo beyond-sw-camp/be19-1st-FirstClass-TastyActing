@@ -1,10 +1,8 @@
 -- 배우 등록
-SELECT * FROM actor;
 
 delimiter //
 CREATE OR REPLACE PROCEDURE insertActor(
-       IN p_code INTEGER
-	  , IN p_name VARCHAR(50)
+	    IN p_name VARCHAR(50)
 	  , IN p_information VARCHAR(255)
 	  , IN p_is_foreigner BOOLEAN
 	  , IN p_filename VARCHAR(255)
@@ -16,8 +14,7 @@ BEGIN
     INSERT 
 	   INTO actor
 	 (
-           code
-		   , name
+		     name
 			, information
 		   , is_foreigner
 			, filename
@@ -35,21 +32,9 @@ BEGIN
 			, p_path
 			, p_date
     );
-    
-    SELECT
-	        code AS '배우코드'
-			, name AS '배우이름'
-			, information AS '배우정보'
-			, is_foreigner AS '외국인여부'
-			, filename AS '파일명'
-			, re_name AS '재설정 파일명'
-			, path AS '경로'
-			, DATE AS '업로드시간'
-	   FROM actor;
-
 END //
 delimiter ;
 
-CALL insertActor(46,'박정민', '아차차 우원박', 0, 'picture6.jpg', 'rename_picture6.jpg', '/uploads/actors/', NULL);
+CALL insertActor('박정민', '아차차 우원박', 0, 'picture6.jpg', 'rename_picture6.jpg', '/uploads/actors/', NULL);
 
 

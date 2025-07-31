@@ -10,10 +10,6 @@ BEGIN
       from genre
      WHERE code = g_code
         OR name = g_name;
-    SELECT
-           code AS '장르코드'
-         , name AS '장르명'
-      FROM genre;
 END //
 delimiter ;
 

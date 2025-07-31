@@ -1,5 +1,4 @@
--- 감독 수정
-SELECT * FROM director;
+-- 감독정보수정
 
 delimiter //
 CREATE OR REPLACE PROCEDURE updateDirector(
@@ -22,14 +21,6 @@ BEGIN
          , d_path
          , d_date
     );
-    SELECT 
-	        code AS '감독코드'  
-         , name AS '감독이름' 
-         , filename AS '파일명'
-         , re_name AS '재설정 파일명'
-         , path AS '경로'
-         , DATE AS '업로드시간'
-	   FROM director;
 END //
 delimiter ;
 
