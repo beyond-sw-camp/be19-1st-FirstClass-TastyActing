@@ -101,8 +101,7 @@ CREATE TABLE movie_review (
     movie_code INTEGER NOT NULL,
     actor_code INTEGER NOT NULL,
     FOREIGN KEY (user_code) REFERENCES user(CODE),
-    FOREIGN KEY (movie_code) REFERENCES movie(CODE),
-    FOREIGN KEY (actor_code) REFERENCES actor(CODE)
+    FOREIGN KEY (movie_code) REFERENCES movie(CODE)
 );
 
 CREATE TABLE actor_review (
@@ -126,7 +125,7 @@ CREATE TABLE comment (
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     report_count INTEGER NOT NULL DEFAULT 0,
     user_code INTEGER NOT NULL,
-    actor_review_code INTEGER NOT NULL,
+    actor_review_code INTEGER NULL,
     movie_review_code INTEGER NULL,
     FOREIGN KEY (user_code) REFERENCES user(CODE),
     FOREIGN KEY (movie_review_code) REFERENCES movie_review(CODE),
