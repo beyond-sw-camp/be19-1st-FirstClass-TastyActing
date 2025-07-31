@@ -14,17 +14,17 @@ BEGIN
    (
           name
         , filename
-		  , re_name
-		  , path
-		  , DATE
+        , re_name
+        , PATH
+        , DATE
    )
    VALUES 
    (
           d_name
         , d_filename
-		  , d_re_name
-		  , d_path
-		  , d_date
+        , d_re_name
+        , d_path
+        , d_date
    );
 END //
 delimiter ;

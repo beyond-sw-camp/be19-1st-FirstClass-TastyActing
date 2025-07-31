@@ -4,11 +4,11 @@ delimiter //
 CREATE OR REPLACE PROCEDURE insertActor(
        IN p_name VARCHAR(50)
      , IN p_information VARCHAR(255)
-	  , IN p_is_foreigner BOOLEAN
-	  , IN p_filename VARCHAR(255)
-	  , IN p_re_name VARCHAR(255)
-	  , IN p_path VARCHAR(255)
-	  , IN p_date DATETIME
+     , IN p_is_foreigner BOOLEAN
+     , IN p_filename VARCHAR(255)
+     , IN p_re_name VARCHAR(255)
+     , IN p_path VARCHAR(255)
+     , IN p_date DATETIME
 )
 BEGIN
    INSERT 
@@ -16,21 +16,21 @@ BEGIN
    (
           name
         , information
-		  , is_foreigner
-		  , filename
-		  , re_name
-		  , path
-		  , DATE
+        , is_foreigner
+        , filename
+        , re_name
+        , name
+        , DATE
    )
    VALUES 
    (
           p_name
         , p_information
-		  , p_is_foreigner
-		  , p_filename
-		  , p_re_name
-		  , p_path
-		  , p_date
+        , p_is_foreigner
+        , p_filename
+        , p_re_name
+        , p_path
+        , p_date
    );
 END //
 delimiter ;
