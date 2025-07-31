@@ -1,6 +1,6 @@
-Delimiter //
+delimiter //
 
-CREATE or replace PROCEDURE ActorReviewByGenre(
+CREATE or replace PROCEDURE actorReviewByGenre(
     IN in_genre_code INTEGER,
     IN in_actor_code INTEGER
 )
@@ -25,6 +25,6 @@ BEGIN
         c.name, d.date DESC;
 END //
 
-DELIMITER ;
+delimiter ;
 
-CALL ActorReviewByGenre(2,1);
+CALL actorReviewByGenre(2,1);
