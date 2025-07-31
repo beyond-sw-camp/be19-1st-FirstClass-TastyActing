@@ -17,7 +17,8 @@ VALUES
 INSERT INTO category (name)
 VALUES
 ('영화리뷰'),
-('배우리뷰');
+('배우리뷰'),
+('댓글');
 
 
 -- 사용자 데이터
@@ -460,5 +461,18 @@ VALUES
 (2, 25, 8), (2, 25, 10);
 
 
+-- 신고 데이터
+INSERT INTO report (reason, reporter_code, category_code, actor_review_code, movie_review_code, comment_code, is_processed)
+VALUES
+('욕설이 포함되어 있습니다.', 3, 1, NULL, 2, NULL, FALSE),
+('허위 사실이 포함된 리뷰입니다.', 5, 1, NULL, 5, NULL, TRUE),
+('근거 없는 비방입니다.', 7, 2, 4, NULL, NULL, FALSE),
+('지나치게 공격적인 내용입니다.', 2, 2, 6, NULL, NULL, TRUE),
+('스팸 댓글입니다.', 8, 3, NULL, NULL, 3, FALSE),
+('불쾌한 표현이 있습니다.', 4, 3, NULL, NULL, 7, TRUE),
+('리뷰에 욕설이 있습니다.', 9, 1, NULL, 7, NULL, FALSE),
+('배우에 대한 악성 리뷰입니다.', 1, 2, 12, NULL, NULL, FALSE),
+('댓글에 비속어가 포함되어 있어요.', 6, 3, NULL, NULL, 10, TRUE),
+('허위 정보로 의심됩니다.', 10, 1, NULL, 4, NULL, FALSE);
 
 
