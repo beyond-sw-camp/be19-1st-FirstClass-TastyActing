@@ -82,12 +82,12 @@ delimiter ;
 INSERT 
   INTO movie_review
 (
-  CODE
+  code
 , score
-, DATE
+, date
 , content
 , report_count
-, NUMBER
+, number
 , user_code
 , movie_code
 )
@@ -106,12 +106,12 @@ VALUES
 INSERT
 INTO actor_review
 (
-  CODE
+  code
 , score
 , content
-, DATE
+, date
 , report_count
-, NUMBER
+, number
 , movie_code
 , actor_code
 , user_code
@@ -147,15 +147,15 @@ SELECT
        u.code AS '회원코드'
      , u.id AS 'ID'
      , u.pw AS 'PW'
-     , u.`name` AS '회원명'
+     , u.name AS '회원명'
      , u.birth_date AS '생년월일'
-     , u.`status` AS '회원상태'
+     , u.status AS '회원상태'
      , u.expires_at AS '정지해제일'
      , u.report_count AS '신고횟수'
      , u.like_count AS '좋아요수'
-     , u.my_number AS '주민등록번호'
+     , u.id_number AS '주민등록번호'
      , r.user_role AS '권한명'
-     , l.`name` AS '등급명'
+     , l.name AS '등급명'
   FROM user u
   LEFT JOIN role r ON u.role_code = r.code
   LEFT JOIN level l ON u.level_code = l.code ;
