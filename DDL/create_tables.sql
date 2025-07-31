@@ -83,6 +83,7 @@ CREATE TABLE user (
     status VARCHAR(50) NOT NULL DEFAULT 'normal',
     expires_at DATE NULL,
     report_count INTEGER NOT NULL DEFAULT 0,
+    like_count INTEGER NOT NULL DEFAULT 0,
     my_number VARCHAR(50) NOT NULL,
     role_code INTEGER NOT NULL,
     level_code INTEGER NOT NULL,
@@ -99,10 +100,8 @@ CREATE TABLE movie_review (
     number INTEGER NOT NULL DEFAULT 0,
     user_code INTEGER NOT NULL,
     movie_code INTEGER NOT NULL,
-    actor_code INTEGER NOT NULL,
     FOREIGN KEY (user_code) REFERENCES user(CODE),
-    FOREIGN KEY (movie_code) REFERENCES movie(CODE),
-    FOREIGN KEY (actor_code) REFERENCES actor(CODE)
+    FOREIGN KEY (movie_code) REFERENCES movie(CODE)
 );
 
 CREATE TABLE actor_review (
@@ -126,7 +125,7 @@ CREATE TABLE comment (
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     report_count INTEGER NOT NULL DEFAULT 0,
     user_code INTEGER NOT NULL,
-    actor_review_code INTEGER NOT NULL,
+    actor_review_code INTEGER NULL,
     movie_review_code INTEGER NULL,
     FOREIGN KEY (user_code) REFERENCES user(CODE),
     FOREIGN KEY (movie_review_code) REFERENCES movie_review(CODE),
@@ -137,7 +136,7 @@ CREATE TABLE report (
     code INTEGER PRIMARY KEY AUTO_INCREMENT,
     reason VARCHAR(255) NULL,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    is_processed BOOLEAN NOT NULL,
+    is_processed BOOLEAN NOT NULL DEFAULT FALSE,
     reporter_code INTEGER NOT NULL,
     actor_review_code INTEGER,
     movie_review_code INTEGER,
@@ -160,3 +159,10 @@ CREATE TABLE likes (
     FOREIGN KEY (user_code) REFERENCES user(CODE)
 );
 
+DROP TABLE if EXISTS blacklist;
+CREATE TABLE blacklist (
+    code INTEGER AUTO_INCREMENT PRIMARY KEY,         -- 인조식별자
+    name VARCHAR(50) NOT NULL,
+    my_number VARCHAR(50) NOT NULL,
+    banned_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
