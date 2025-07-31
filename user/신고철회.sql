@@ -1,16 +1,16 @@
 -- 신고 철회
 DELIMITER //
 
-CREATE PROCEDURE deleteReports(
-  IN reporterId INT
+CREATE PROCEDURE delete_reports(
+  IN reporter_id INT
 )
 BEGIN
     DELETE FROM report
-    WHERE reporter_code = reporterId;
+    WHERE reporter_code = reporter_id;
 END //
 
 DELIMITER ;
 
-CALL deleteReports(1);
+CALL delete_reports(1);
 
 

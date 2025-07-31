@@ -1,8 +1,8 @@
 -- 신고 내역 조회
 DELIMITER //
 
-CREATE PROCEDURE getReports(
-    IN reporterId INT
+CREATE PROCEDURE get_reports(
+    IN reporter_id INT
 )
 BEGIN
     SELECT
@@ -31,9 +31,9 @@ BEGIN
      LEFT JOIN movie_review c ON a.movie_review_code = c.code
      LEFT JOIN actor_review d ON a.actor_review_code = d.code
      LEFT JOIN comment e ON a.comment_code = e.code
-    WHERE a.reporter_code = reporterId;
+    WHERE a.reporter_code = reporter_id;
 END //
 
 DELIMITER ;
 
-CALL getReports(1);
+CALL get_reports(1);
