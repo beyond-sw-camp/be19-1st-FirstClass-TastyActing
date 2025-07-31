@@ -1,9 +1,18 @@
 delimiter //
 
-CREATE OR replace PROCEDURE SearchActor(IN p_search VARCHAR(255))
+CREATE OR replace PROCEDURE searchActor(IN p_search VARCHAR(255))
 BEGIN
-		SELECT * FROM actor
-		WHERE NAME LIKE CONCAT('%', p_search, '%');
+		SELECT 
+		       name
+           , information
+           , filename
+           , re_name
+           , path
+           , date 
+		  FROM actor
+		 WHERE NAME LIKE CONCAT('%', p_search, '%');
 END //
 
 DELIMITER ;
+
+CALL searchActor('송');
