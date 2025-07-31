@@ -17,7 +17,7 @@ INSERT INTO likes (
     is_liked, user_code, movie_review_code, actor_review_code
 ) VALUES 
 (TRUE, 1, 1, NULL), 
-(TRUE, 1, 2, NULL);
+(TRUE, 1, 1, NULL);
 
 -- 2. 배우 리뷰에 좋아요
 INSERT INTO likes (
@@ -25,3 +25,6 @@ INSERT INTO likes (
 ) VALUES 
 (TRUE, 1, NULL, 1),
 (TRUE, 1, NULL, 2);
+
+SELECT * FROM movie_review;
+SELECT * FROM movie;
