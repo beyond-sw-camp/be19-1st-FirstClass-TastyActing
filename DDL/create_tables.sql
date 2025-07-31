@@ -99,7 +99,6 @@ CREATE TABLE movie_review (
     number INTEGER NOT NULL DEFAULT 0,
     user_code INTEGER NOT NULL,
     movie_code INTEGER NOT NULL,
-    actor_code INTEGER NOT NULL,
     FOREIGN KEY (user_code) REFERENCES user(CODE),
     FOREIGN KEY (movie_code) REFERENCES movie(CODE)
 );
