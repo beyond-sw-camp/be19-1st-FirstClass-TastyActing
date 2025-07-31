@@ -56,10 +56,11 @@ END //
 
 delimiter ;
 
--- movie_review와 actor_review테이블에서 좋아요가 바뀔 때마다 자동으로 반영되도록 트리거 작성.
+-- movie_review와 actor_review테이블에서 좋아요가 바뀔 때마다 
+-- 반영되도록 트리거 작성. like_count의 합 구하는 procedure 호출.
 delimiter //
 
-CREATE OR REPLACE TRIGGER trg_after_movie_review_update
+CREATE OR REPLACE TRIGGER trg_movie_review
     AFTER UPDATE
     ON movie_review
     FOR EACH ROW
@@ -67,7 +68,7 @@ BEGIN
    CALL user_like_level(NEW.user_code);
 END //
 
-CREATE OR REPLACE TRIGGER trg_after_actor_review_update
+CREATE OR REPLACE TRIGGER trg_actor_review
     AFTER UPDATE 
     ON actor_review
     FOR EACH ROW
@@ -102,6 +103,7 @@ VALUES
 , (8, 4.5, NOW(), '배우 연기가 최고입니다.', 4, 40, 8, 8)
 , (9, 2.5, NOW(), '배우 연기가 별론데예.', 4, 10, 9, 9)
 , (10, 4.1, NOW(), '배우 연기가 별론데예.', 4, 10, 10, 10);
+
 -- 샘플 데이터 (actor_review)
 INSERT
 INTO actor_review
@@ -128,10 +130,10 @@ VALUES
 , (9, 5, '박소담 연기 너무 좋아요.', NOW(), 5, 10, 9, 9, 9)
 , (10, 3, '최우식 배우 눈빛 연기 굿.', NOW(), 6, 10, 10, 10, 10);
 
--- 트리거 자동 실행 확인을 위해 좋아요 수 수정
+-- 트리거확인을 위한 좋아요 수 수정
 UPDATE movie_review SET number = 50 WHERE code = 1;
 
--- 수동으로 실행 테스트
+-- 실행 테스트
 CALL user_like_level(1);
 CALL user_like_level(2);
 CALL user_like_level(3);
@@ -142,6 +144,7 @@ CALL user_like_level(7);
 CALL user_like_level(8);
 CALL user_like_level(9);
 CALL user_like_level(10);
+
 -- 결과 확인
 SELECT
        u.code AS '회원코드'
