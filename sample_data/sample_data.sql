@@ -1,3 +1,30 @@
+-- 권한 데이터
+INSERT INTO role (user_role)
+VALUES
+('사용자'),
+('관리자');
+
+-- 등급 데이터
+INSERT INTO level (name)
+VALUES
+('브론즈'),
+('실버'),
+('골드');
+
+-- 사용자 데이터
+INSERT INTO user(id, pw, name, birth_date, status, my_number, role_code, level_code)
+VALUES
+('user1', 'user1', 'user1', '1999-09-09', 'normal', 010-1111-1111, 1, 1),
+('user2', 'user2', 'user2', '1998-08-08', 'normal', 010-1111-1112, 1, 2),
+('user3', 'user3', 'user3', '1997-07-07', 'normal', 010-1111-1113, 1, 3),
+('user4', 'user4', 'user4', '1996-06-06', 'normal', 010-1111-1114, 1, 1),
+('user5', 'user5', 'user5', '1995-05-05', 'normal', 010-1111-1115, 1, 1),
+('user6', 'user6', 'user6', '1994-04-04', 'normal', 010-1111-1116, 1, 1),
+('user7', 'user7', 'user7', '1993-03-03', 'normal', 010-1111-1117, 1, 2),
+('user8', 'user8', 'user8', '1992-03-05', 'normal', 010-1111-1118, 1, 1),
+('user9', 'user9', 'user9', '1991-02-04', 'normal', 010-1111-1119, 1, 2),
+('user10', 'user10', 'user10', '1990-01-01', 'normal', 010-1111-1120, 1, 2);
+
 
 -- 장르 데이터
  INSERT INTO genre (name) VALUES
@@ -156,11 +183,11 @@ VALUES
 (14, 6, 'Cooper'),
 (14, 7, 'Brand'),
 (14, 8, 'Murphy'),
-(15, 41, '남우경'),
-(15, 42, '백준승'),
-(15, 43, '변민철'),
-(15, 44, '이순우'),
-(15, 45, '정유진');
+(15, 41, '우경'),
+(15, 42, '준승'),
+(15, 43, '민철'),
+(15, 44, '순우'),
+(15, 45, '유진');
 
 
 
