@@ -2,3 +2,7 @@
 -- 좋아요 개수에 따라 50, 100, 500 / 브론즈, 실버, 골드
 
 SELECT * FROM user;
+SELECT * 
+
+delimiter //
+CREATE OR REPLACE PROCEDURE giveLevel
