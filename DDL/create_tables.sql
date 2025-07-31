@@ -159,3 +159,10 @@ CREATE TABLE likes (
     FOREIGN KEY (user_code) REFERENCES user(CODE)
 );
 
+DROP TABLE if EXISTS blacklist;
+CREATE TABLE blacklist (
+    code INTEGER AUTO_INCREMENT PRIMARY KEY,         -- 인조식별자
+    name VARCHAR(50) NOT NULL,
+    my_number VARCHAR(50) NOT NULL,
+    banned_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
