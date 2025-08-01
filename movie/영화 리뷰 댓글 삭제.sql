@@ -2,11 +2,12 @@
 DELIMITER //
 
 CREATE OR REPLACE PROCEDURE deleteComment (
-    IN comment_code INTEGER,
+    IN comment_code INTEGER
 )
 BEGIN
-    DELETE comment 
-    WHERE code = comment_code;
+    UPDATE comment 
+       SET is_deleted = TRUE
+     WHERE code = comment_code;
 END //
 
 DELIMITER ;
