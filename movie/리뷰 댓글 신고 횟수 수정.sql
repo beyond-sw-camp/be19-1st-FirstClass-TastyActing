@@ -1,6 +1,4 @@
 -- 리뷰 및 댓글 신고 횟수 업데이트 트리거
-DESC report;
-
 DELIMITER //
 
 CREATE TRIGGER updateReportCount
