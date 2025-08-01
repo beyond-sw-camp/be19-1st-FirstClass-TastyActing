@@ -11,9 +11,9 @@ BEGIN
     -- 신고 30회: 계정 영구 정지 및 블랙리스트 추가
     IF NEW.report_count = 30 THEN
        
-        IF OLD.name IS NOT NULL AND OLD.my_number IS NOT NULL AND NEW.status != 'banned' THEN
-            INSERT INTO blacklist (name, my_number)
-            VALUES (OLD.name, OLD.my_number);
+        IF OLD.name IS NOT NULL AND OLD.id_number IS NOT NULL AND NEW.status != 'banned' THEN
+            INSERT INTO blacklist (name, id_number)
+            VALUES (OLD.name, OLD.id_number);
         END IF;
         
         SET NEW.status = 'banned';
