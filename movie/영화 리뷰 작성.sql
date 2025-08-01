@@ -10,8 +10,9 @@ SELECT
 	 , 15
 WHERE NOT EXISTS (
     SELECT 1 FROM movie_review
-    WHERE user_code = 4 AND movie_code = 15
+    WHERE user_code = 4 AND movie_code = 15 AND is_deleted = FALSE
 );
+
 
 
 
