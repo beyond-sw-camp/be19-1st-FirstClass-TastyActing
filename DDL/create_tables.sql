@@ -100,6 +100,7 @@ CREATE TABLE movie_review (
     content VARCHAR(255) NULL,
     report_count INTEGER NOT NULL DEFAULT 0,
     like_count INTEGER NOT NULL DEFAULT 0,
+    is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
     user_code INTEGER NOT NULL,
     movie_code INTEGER NOT NULL,
     FOREIGN KEY (user_code) REFERENCES user(CODE),
@@ -113,6 +114,7 @@ CREATE TABLE actor_review (
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     report_count INTEGER NOT NULL,
     like_count INTEGER NOT NULL,
+    is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
     movie_code INTEGER NOT NULL,
     actor_code INTEGER NOT NULL,
     user_code INTEGER NOT NULL,
@@ -131,6 +133,7 @@ CREATE TABLE comment (
     content VARCHAR(255) NOT NULL,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     report_count INTEGER NOT NULL DEFAULT 0,
+    is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
     user_code INTEGER NOT NULL,
     category_code INTEGER NOT NULL,
     actor_review_code INTEGER NULL,
@@ -155,12 +158,13 @@ CREATE TABLE report (
     FOREIGN KEY (category_code) REFERENCES category(CODE),
     FOREIGN KEY (movie_review_code) REFERENCES movie_review(CODE),
     FOREIGN KEY (actor_review_code) REFERENCES actor_review(CODE),
-    FOREIGN KEY (comment_code) REFERENCES comment(CODE)
+    FOREIGN KEY (comment_code) REFERENCES comment(CODE) 
 );
 
 CREATE TABLE likes (
     code INTEGER PRIMARY KEY AUTO_INCREMENT,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
     category_code INTEGER NOT NULL,
     movie_review_code INTEGER NULL,
     actor_review_code INTEGER NULL,
