@@ -1,7 +1,7 @@
 -- 등급 부여
 -- 좋아요 개수에 따라 50, 100, 500 / 아이언(기본 등급), 브론즈, 실버, 골드
 -- like_count를 계산하는 stored function
-delimiter //
+DELIMITER //
 
 CREATE OR REPLACE FUNCTION total_like_count(
     IN t_code INTEGER
@@ -9,21 +9,31 @@ CREATE OR REPLACE FUNCTION total_like_count(
 RETURNS INTEGER
 DETERMINISTIC
 BEGIN
+   DECLARE total_likes_movie INTEGER;
+   DECLARE total_likes_actor INTEGER;
    DECLARE total_likes INTEGER;
 
-   SELECT
-          IFNULL(SUM(b.like_count), 0) +
-          IFNULL(SUM(c.like_count), 0)
-     INTO total_likes
-     FROM user a
-     LEFT JOIN movie_review b ON a.code = b.user_code
-     LEFT JOIN actor_review c ON a.code = c.user_code
-    WHERE a.code = t_code;
+   -- 영화 리뷰 좋아요 수 합산
+   SELECT IFNULL(SUM(like_count), 0)
+     INTO total_likes_movie
+     FROM movie_review
+    WHERE user_code = t_code;
+
+   -- 배우 리뷰 좋아요 수 합산
+   SELECT IFNULL(SUM(like_count), 0)
+     INTO total_likes_actor
+     FROM actor_review
+    WHERE user_code = t_code;
+
+   -- 총합
+   SET total_likes = total_likes_movie + total_likes_actor;
 
    RETURN total_likes;
-END //
+END;
+//
 
-delimiter ;
+DELIMITER ;
+
 
 -- like_count와 level_code를 업데이트하는 procedure
 delimiter //
@@ -77,36 +87,3 @@ BEGIN
 END //
 
 delimiter ;
-
--- 트리거확인을 위한 좋아요 수 수정
-UPDATE movie_review SET like_count = 50 WHERE code = 1;
-
--- 실행 테스트
-CALL user_like_level(1);
-CALL user_like_level(2);
-CALL user_like_level(3);
-CALL user_like_level(4);
-CALL user_like_level(5);
-CALL user_like_level(6);
-CALL user_like_level(7);
-CALL user_like_level(8);
-CALL user_like_level(9);
-CALL user_like_level(10);
-
--- 결과 확인
-SELECT
-       a.code AS '회원코드'
-     , a.id AS 'ID'
-     , a.pw AS 'PW'
-     , a.name AS '회원명'
-     , a.birth_date AS '생년월일'
-     , a.status AS '회원상태'
-     , a.expires_at AS '정지해제일'
-     , a.report_count AS '신고횟수'
-     , a.like_count AS '좋아요수'
-     , a.id_number AS '주민등록번호'
-     , b.user_role AS '권한명'
-     , c.name AS '등급명'
-  FROM user a
-  LEFT JOIN role b ON a.role_code = b.code
-  LEFT JOIN level c ON a.level_code = c.code ;
