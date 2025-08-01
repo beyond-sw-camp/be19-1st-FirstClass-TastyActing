@@ -1,17 +1,19 @@
 DROP TABLE if EXISTS likes;
 DROP TABLE if EXISTS report;
-DROP TABLE if EXISTS COMMENT;
+DROP TABLE if EXISTS comment;
 DROP TABLE if EXISTS movie_review;
 DROP TABLE if EXISTS actor_review;
 DROP TABLE if EXISTS movie_actors;
-DROP TABLE if EXISTS USER;
+DROP TABLE if EXISTS blacklist;
+DROP TABLE if EXISTS user;
 DROP TABLE if EXISTS movie;
 DROP TABLE if EXISTS actor;
-DROP TABLE if EXISTS ROLE;
-DROP TABLE if EXISTS LEVEL;
+DROP TABLE if EXISTS role;
+DROP TABLE if EXISTS level;
 DROP TABLE if EXISTS director;
-
 DROP TABLE if EXISTS genre;
+DROP TABLE if EXISTS category;
+
 CREATE TABLE genre (
     code INTEGER PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL
@@ -80,11 +82,11 @@ CREATE TABLE user (
     pw VARCHAR(50) NOT NULL,
     name VARCHAR(50) NOT NULL,
     birth_date DATE NOT NULL,
+    id_number VARCHAR(50) NOT NULL,
     status VARCHAR(50) NOT NULL DEFAULT 'normal',
     expires_at DATE NULL,
     report_count INTEGER NOT NULL DEFAULT 0,
     like_count INTEGER NOT NULL DEFAULT 0,
-    my_number VARCHAR(50) NOT NULL,
     role_code INTEGER NOT NULL,
     level_code INTEGER NOT NULL,
     FOREIGN KEY (role_code) REFERENCES role(CODE),
@@ -97,7 +99,7 @@ CREATE TABLE movie_review (
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     content VARCHAR(255) NULL,
     report_count INTEGER NOT NULL DEFAULT 0,
-    number INTEGER NOT NULL DEFAULT 0,
+    like_count INTEGER NOT NULL DEFAULT 0,
     user_code INTEGER NOT NULL,
     movie_code INTEGER NOT NULL,
     FOREIGN KEY (user_code) REFERENCES user(CODE),
@@ -110,7 +112,7 @@ CREATE TABLE actor_review (
     content VARCHAR(255) NULL,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     report_count INTEGER NOT NULL,
-    number INTEGER NOT NULL,
+    like_count INTEGER NOT NULL,
     movie_code INTEGER NOT NULL,
     actor_code INTEGER NOT NULL,
     user_code INTEGER NOT NULL,
@@ -119,14 +121,21 @@ CREATE TABLE actor_review (
     FOREIGN KEY (actor_code) REFERENCES actor(CODE)
 );
 
+CREATE TABLE category (
+	code INTEGER PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL
+);
+
 CREATE TABLE comment (
     code INTEGER PRIMARY KEY AUTO_INCREMENT,
     content VARCHAR(255) NOT NULL,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     report_count INTEGER NOT NULL DEFAULT 0,
     user_code INTEGER NOT NULL,
+    category_code INTEGER NOT NULL,
     actor_review_code INTEGER NULL,
     movie_review_code INTEGER NULL,
+    FOREIGN KEY (category_code) REFERENCES category(CODE),
     FOREIGN KEY (user_code) REFERENCES user(CODE),
     FOREIGN KEY (movie_review_code) REFERENCES movie_review(CODE),
     FOREIGN KEY (actor_review_code) REFERENCES actor_review(CODE)
@@ -138,10 +147,12 @@ CREATE TABLE report (
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     is_processed BOOLEAN NOT NULL DEFAULT FALSE,
     reporter_code INTEGER NOT NULL,
+    category_code INTEGER NOT NULL,
     actor_review_code INTEGER,
     movie_review_code INTEGER,
     comment_code INTEGER,
     FOREIGN KEY (reporter_code) REFERENCES user(CODE),
+    FOREIGN KEY (category_code) REFERENCES category(CODE),
     FOREIGN KEY (movie_review_code) REFERENCES movie_review(CODE),
     FOREIGN KEY (actor_review_code) REFERENCES actor_review(CODE),
     FOREIGN KEY (comment_code) REFERENCES comment(CODE)
@@ -149,20 +160,24 @@ CREATE TABLE report (
 
 CREATE TABLE likes (
     code INTEGER PRIMARY KEY AUTO_INCREMENT,
-    is_liked BOOLEAN NOT NULL DEFAULT FALSE,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    category_code INTEGER NOT NULL,
     movie_review_code INTEGER NULL,
     actor_review_code INTEGER NULL,
     user_code INTEGER NOT NULL,
+    FOREIGN KEY (category_code) REFERENCES category(CODE),
     FOREIGN KEY (movie_review_code) REFERENCES movie_review(CODE),
     FOREIGN KEY (actor_review_code) REFERENCES actor_review(CODE),
     FOREIGN KEY (user_code) REFERENCES user(CODE)
 );
 
-DROP TABLE if EXISTS blacklist;
+
 CREATE TABLE blacklist (
-    code INTEGER AUTO_INCREMENT PRIMARY KEY,         -- 인조식별자
+    code INTEGER,         
     name VARCHAR(50) NOT NULL,
-    my_number VARCHAR(50) NOT NULL,
-    banned_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+    id_number VARCHAR(50) NOT NULL,
+    banned_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (code),
+    FOREIGN KEY (code) REFERENCES user(code)
 );
+
