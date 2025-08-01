@@ -189,4 +189,3 @@ CREATE TABLE blacklist (
     PRIMARY KEY (code),
     FOREIGN KEY (code) REFERENCES user(code)
 );
-

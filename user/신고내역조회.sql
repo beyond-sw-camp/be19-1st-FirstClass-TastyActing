@@ -1,4 +1,5 @@
 -- 신고 내역 조회
+
 DELIMITER //
 
 CREATE PROCEDURE get_reports(
