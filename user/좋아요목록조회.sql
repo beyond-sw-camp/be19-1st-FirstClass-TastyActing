@@ -1,5 +1,4 @@
 -- 좋아요 목록 조회
-
 SELECT 
        a.code
      , b.name AS 사용자
@@ -10,5 +9,5 @@ SELECT
   JOIN user b ON a.user_code = b.code
   left JOIN movie_review c ON a.movie_review_code = c.code
   left JOIN actor_review d ON a.actor_review_code = d.code
- WHERE a.is_liked = TRUE AND a.user_code = 5;
+ WHERE a.user_code = 5;
  
