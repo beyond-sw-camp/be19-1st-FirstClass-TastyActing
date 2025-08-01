@@ -45,4 +45,3 @@ END //
 delimiter ;
 CALL toggleLike(2,1,1);     -- 기존에 좋아요를 한 사용자는 likes에 insert 안되고 삭제
 CALL toggleLike(1,2,1);     -- 새로운 좋아요는 likes에 insert됨
-
