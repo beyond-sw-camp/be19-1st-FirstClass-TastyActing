@@ -137,8 +137,8 @@ CREATE TABLE comment (
     movie_review_code INTEGER NULL,
     FOREIGN KEY (category_code) REFERENCES category(CODE),
     FOREIGN KEY (user_code) REFERENCES user(CODE),
-    FOREIGN KEY (movie_review_code) REFERENCES movie_review(CODE),
-    FOREIGN KEY (actor_review_code) REFERENCES actor_review(CODE)
+    FOREIGN KEY (movie_review_code) REFERENCES movie_review(CODE) ON DELETE CASCADE,
+    FOREIGN KEY (actor_review_code) REFERENCES actor_review(CODE) ON DELETE CASCADE
 );
 
 CREATE TABLE report (
@@ -153,9 +153,9 @@ CREATE TABLE report (
     comment_code INTEGER,
     FOREIGN KEY (reporter_code) REFERENCES user(CODE),
     FOREIGN KEY (category_code) REFERENCES category(CODE),
-    FOREIGN KEY (movie_review_code) REFERENCES movie_review(CODE),
-    FOREIGN KEY (actor_review_code) REFERENCES actor_review(CODE),
-    FOREIGN KEY (comment_code) REFERENCES comment(CODE)
+    FOREIGN KEY (movie_review_code) REFERENCES movie_review(CODE) ON DELETE SET NULL,
+    FOREIGN KEY (actor_review_code) REFERENCES actor_review(CODE) ON DELETE SET NULL,
+    FOREIGN KEY (comment_code) REFERENCES comment(CODE) ON DELETE SET NULL 
 );
 
 CREATE TABLE likes (
@@ -166,8 +166,8 @@ CREATE TABLE likes (
     actor_review_code INTEGER NULL,
     user_code INTEGER NOT NULL,
     FOREIGN KEY (category_code) REFERENCES category(CODE),
-    FOREIGN KEY (movie_review_code) REFERENCES movie_review(CODE),
-    FOREIGN KEY (actor_review_code) REFERENCES actor_review(CODE),
+    FOREIGN KEY (movie_review_code) REFERENCES movie_review(CODE) ON DELETE CASCADE,
+    FOREIGN KEY (actor_review_code) REFERENCES actor_review(CODE) ON DELETE CASCADE,
     FOREIGN KEY (user_code) REFERENCES user(CODE)
 );
 
