@@ -100,6 +100,7 @@ CREATE TABLE movie_review (
     content VARCHAR(255) NULL,
     report_count INTEGER NOT NULL DEFAULT 0,
     like_count INTEGER NOT NULL DEFAULT 0,
+    is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
     user_code INTEGER NOT NULL,
     movie_code INTEGER NOT NULL,
     FOREIGN KEY (user_code) REFERENCES user(CODE),
@@ -113,6 +114,7 @@ CREATE TABLE actor_review (
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     report_count INTEGER NOT NULL,
     like_count INTEGER NOT NULL,
+    is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
     movie_code INTEGER NOT NULL,
     actor_code INTEGER NOT NULL,
     user_code INTEGER NOT NULL,
@@ -131,6 +133,7 @@ CREATE TABLE comment (
     content VARCHAR(255) NOT NULL,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     report_count INTEGER NOT NULL DEFAULT 0,
+    is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
     user_code INTEGER NOT NULL,
     category_code INTEGER NOT NULL,
     actor_review_code INTEGER NULL,
@@ -153,9 +156,15 @@ CREATE TABLE report (
     comment_code INTEGER,
     FOREIGN KEY (reporter_code) REFERENCES user(CODE),
     FOREIGN KEY (category_code) REFERENCES category(CODE),
+<<<<<<< HEAD
     FOREIGN KEY (movie_review_code) REFERENCES movie_review(CODE) ON DELETE SET NULL,
     FOREIGN KEY (actor_review_code) REFERENCES actor_review(CODE) ON DELETE SET NULL,
     FOREIGN KEY (comment_code) REFERENCES comment(CODE) ON DELETE SET NULL 
+=======
+    FOREIGN KEY (movie_review_code) REFERENCES movie_review(CODE),
+    FOREIGN KEY (actor_review_code) REFERENCES actor_review(CODE),
+    FOREIGN KEY (comment_code) REFERENCES comment(CODE) 
+>>>>>>> c799f2f03668043521dd0154eb0e1e218fef62bf
 );
 
 CREATE TABLE likes (
