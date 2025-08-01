@@ -1,3 +1,5 @@
+-- 좋아요 목록 조회
+
 SELECT 
        a.code
      , b.name AS 사용자
