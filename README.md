@@ -1,4 +1,22 @@
+# First Class 영화 평점 사이트
+![배너](./images/다다익성_팝업배너.png)
 
+
+---
+
+## <span id="1"> 🖼️ First Class 팀원 소개</span>
+
+<div align="center">
+
+|   |   |   |   |   |
+| :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------------------: | :-----------------------------------------------------------: | :--------------------------------------------------------------: |
+|      <img src="https://avatars.githubusercontent.com/u/76045552?v=4" width="120px;" alt=""/>      |      <img src="https://avatars.githubusercontent.com/u/171325395?v=4" width="120px;" alt=""/>      |            <img src="https://avatars.githubusercontent.com/u/150048350?v=4" width="120px;" alt=""/>            |    <img src="https://avatars.githubusercontent.com/u/150311355?v=4" width="120px;" alt=""/>     |      <img src="https://avatars.githubusercontent.com/u/112924560?v=4" width="120px;" alt=""/>      |
+|      [정유진](https://github.com/YujinJeong1006)      |      [백준승](https://github.com/seoguhoe2)      |      [이순우](https://github.com/SoonWooLee1)      |      [변민철](https://github.com/bynmch)      |      [남우경](https://github.com/woo-kyoung-nam)      |
+
+</div>
+
+
+<br>
 
 ## 🗂️ 프로젝트 기획
 ## 1-1. 개요
