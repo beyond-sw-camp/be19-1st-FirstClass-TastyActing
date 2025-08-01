@@ -62,19 +62,19 @@ VALUES
  ('미스터리');
 
 -- 감독 데이터 
-INSERT INTO director (name, filename, re_name, path)
+INSERT INTO director (name, information, filename, re_name, path)
 VALUES
-('봉준호', 'bong_joonho.jpg', 'bong_joonho.jpg', '/uploads/directors/'), 
-('강윤성', 'kang_yoonseong.jpg', 'kang_yoonseong.jpg', '/uploads/directors/'),  
-('이병헌', 'lee_byunghun.jpg', 'lee_byunghun.jpg', '/uploads/directors/'), 
-('최동훈', 'choi_donghoon.jpg', 'choi_donghoon.jpg', '/uploads/directors/'),  
-('연상호', 'yeon_sangho.jpg', 'yeon_sangho.jpg', '/uploads/directors/'), 
-('윤제균', 'yoon_je_kyoon.jpg', 'yoon_je_kyoon.jpg', '/uploads/directors/'),  
-('장훈', 'jang_hoon.jpg', 'jang_hoon.jpg', '/uploads/directors/'), 
-('Christopher Nolan', 'nolan.jpg', 'nolan.jpg', '/uploads/directors/'),
-('박찬욱', 'park_chanwook.jpg', 'park_chanwook.jpg', '/uploads/directors/'),
-('우민호', 'woo_minho.jpg', 'woo_minho.jpg', '/uploads/directors/'),
-('Denis Villeneuve', 'villeneuve.jpg', 'villeneuve.jpg', '/uploads/directors/');
+('봉준호', '한국의 영화감독으로, 기생충으로 아카데미 작품상을 수상하였다.', 'bong_joonho.jpg', 'bong_joonho.jpg', '/uploads/directors/'), 
+('강윤성', '범죄도시로 유명한 한국 영화감독으로 액션과 범죄 장르에서 활동한다.', 'kang_yoonseong.jpg', 'kang_yoonseong.jpg', '/uploads/directors/'),  
+('이병헌', '배우이자 감독으로 활동하며, 다양한 작품에서 연출력을 보여주고 있다.', 'lee_byunghun.jpg', 'lee_byunghun.jpg', '/uploads/directors/'), 
+('최동훈', '한국의 흥행 감독으로 도둑들, 암살 등 대작 영화를 연출하였다.', 'choi_donghoon.jpg', 'choi_donghoon.jpg', '/uploads/directors/'),  
+('연상호', '부산행과 지옥 등으로 넷플릭스와 극장에서 모두 성공을 거둔 감독이다.', 'yeon_sangho.jpg', 'yeon_sangho.jpg', '/uploads/directors/'), 
+('윤제균', '국제시장 등의 흥행 영화로 알려진 감독이며, 따뜻한 가족 이야기를 주로 다룬다.', 'yoon_je_kyoon.jpg', 'yoon_je_kyoon.jpg', '/uploads/directors/'),  
+('장훈', '의형제, 고지전 등 사회성과 휴머니즘이 어우러진 작품을 연출한 감독이다.', 'jang_hoon.jpg', 'jang_hoon.jpg', '/uploads/directors/'), 
+('Christopher Nolan', '인셉션, 인터스텔라 등 철학적 SF 영화로 유명한 영국 출신 감독이다.', 'nolan.jpg', 'nolan.jpg', '/uploads/directors/'),
+('박찬욱', '올드보이, 아가씨 등 독특한 미장센과 연출력으로 전 세계적으로 주목받는 감독이다.', 'park_chanwook.jpg', 'park_chanwook.jpg', '/uploads/directors/'),
+('우민호', '내부자들, 남산의 부장들 등 정치 드라마를 통해 사회비판적 시각을 드러내는 감독이다.', 'woo_minho.jpg', 'woo_minho.jpg', '/uploads/directors/'),
+('Denis Villeneuve', '듄, 컨택트 등으로 현대 SF의 선두주자로 평가받는 캐나다 감독이다.', 'villeneuve.jpg', 'villeneuve.jpg', '/uploads/directors/');
 
 
 -- 배우 데이터 

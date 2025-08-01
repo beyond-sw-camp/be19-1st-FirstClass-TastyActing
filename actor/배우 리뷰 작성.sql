@@ -11,4 +11,5 @@ SELECT  4.5,'연기가 정말 인상 깊었어요!',2,2,3
                     WHERE user_code = 3 
                       AND movie_code = 7 
                       AND actor_code = 4
+                      AND is_deleted = FALSE
                   );	
