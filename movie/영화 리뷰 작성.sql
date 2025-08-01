@@ -13,7 +13,6 @@ WHERE NOT EXISTS (
     WHERE user_code = 4 AND movie_code = 15 AND is_deleted = FALSE
 );
 
-select * from movie_review;
 
 
 

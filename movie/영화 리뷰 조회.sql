@@ -12,9 +12,8 @@ BEGIN
 	 	 , a.date AS '작성일'
 	 	 , a.like_count AS '좋아요 개수'
 	  FROM movie_review a
-	  JOIN movie b ON a.movie_code = b.code
 	  JOIN user c ON a.user_code = c.code
-	 WHERE a.is_deleted = FALSE;
+	 WHERE a.is_deleted = FALSE AND a.movie_code = code;
 END //
 
 DELIMITER ;
