@@ -8,10 +8,10 @@ CREATE OR REPLACE PROCEDURE searchUpcomingMovie(
 )
 BEGIN
     SELECT 
-          a.name AS '상영예정 영화명'
-        , a.release_date AS '개봉일'
-        , a.rating AS '관람등급'
-        , b.name AS '장르'
+           a.name AS '상영예정 영화명'
+         , a.release_date AS '개봉일'
+         , a.rating AS '관람등급'
+         , b.name AS '장르'
       FROM movie AS a
       JOIN genre AS b ON a.genre_code = b.code
      WHERE a.is_released = 0
