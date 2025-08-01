@@ -3,7 +3,7 @@
 delimiter //
 
 CREATE OR REPLACE PROCEDURE getReportedPosts(
-    IN p_category_code INT
+    IN p_category_code INTEGER
 )
 BEGIN
    IF p_category_code = 1 THEN
