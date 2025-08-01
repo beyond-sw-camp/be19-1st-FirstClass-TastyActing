@@ -22,7 +22,8 @@ CREATE TABLE genre (
 CREATE TABLE director (
     code INTEGER PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
-    is_deleted BOOLEAN NOT NULL,
+    information VARCHAR(255) NOT NULL,
+    is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
     filename VARCHAR(255) NULL,
     re_name VARCHAR(255) NULL,
     path VARCHAR(255) NULL,
@@ -47,7 +48,7 @@ CREATE TABLE movie (
     score DOUBLE NULL,
     rating VARCHAR(50) NULL,
     is_released BOOLEAN NOT NULL,
-    is_deleted BOOLEAN NOT NULL,
+    is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
     filename VARCHAR(255) NULL,
     re_name VARCHAR(255) NULL,
     path VARCHAR(255) NULL,
@@ -67,7 +68,7 @@ CREATE TABLE actor (
     re_name VARCHAR(255) NULL,
     path VARCHAR(255) NULL,
     date DATETIME NULL,
-    is_deleted BOOLEAN NOT NULL
+   is_deleted BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 CREATE TABLE movie_actors (
