@@ -164,7 +164,6 @@ CREATE TABLE report (
 CREATE TABLE likes (
     code INTEGER PRIMARY KEY AUTO_INCREMENT,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
     category_code INTEGER NOT NULL,
     movie_review_code INTEGER NULL,
     actor_review_code INTEGER NULL,
