@@ -1,5 +1,5 @@
 # 연기맛집 - 영화 평점 사이트
-![배너](./images/banner.png)
+![배너](./image/banner.png)
 
 
 ---
