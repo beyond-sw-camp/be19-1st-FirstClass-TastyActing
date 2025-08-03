@@ -376,6 +376,7 @@ CREATE INDEX idx_actor_name ON actor(name);
 
 <br>
 ---
+
 ## 5. 테스트 케이스
 
 ---
