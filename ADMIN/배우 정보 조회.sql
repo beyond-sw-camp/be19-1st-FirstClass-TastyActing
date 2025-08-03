@@ -2,5 +2,5 @@
 SELECT 
        name AS '배우명'
      , information AS '소개'
-  FROM user
+  FROM actor
  WHERE is_deleted = FALSE;

@@ -1,37 +1,21 @@
 -- 감독정보수정
-
-delimiter //
-CREATE OR REPLACE PROCEDURE updateDirector(
-       IN d_code INTEGER
-     , IN d_name VARCHAR(50)
-     , IN d_filename VARCHAR(255)
-     , IN d_re_name VARCHAR(255)
-     , IN d_path VARCHAR(255)
-     , IN d_date DATETIME
-)
-BEGIN
-   REPLACE
-      INTO director 
-    VALUES
-   (
-           d_code
-         , d_name
-         , d_filename
-         , d_re_name
-         , d_path
-         , d_date
-    );
-END //
-delimiter ;
-
-CALL updateDirector(11, 'Joseph Kosinski', 'josephkosinski.jpg', 'josephkosinski.jpg', '/uploads/directors/', NULL);
+REPLACE
+   INTO director (name, information, filename, re_name, path)
+ VALUES 
+( 
+  'Joseph Kosinski'
+, '미국의 영화 감독, 영화 제작자이다. CG 기술과 컴퓨터 생성 이미지 전문가로 유명하다.'
+,'josephkosinski.jpg'
+, 'josephkosinski.jpg'
+, '/uploads/directors/'
+);
 
 -- 감독 이름을 수정하는 경우
 UPDATE director
-   SET NAME = 'Joseph Kosinski'
- WHERE CODE = 11;
+   SET NAME = '변경이름'
+ WHERE CODE = 13;
  
 -- 감독 사진을 수정하는 경우
 UPDATE director
-   SET filename = 'Josephkosinski_new.jpg'
- WHERE CODE = 11;
+   SET filename = '변경사진.jpg'
+ WHERE CODE = 13;

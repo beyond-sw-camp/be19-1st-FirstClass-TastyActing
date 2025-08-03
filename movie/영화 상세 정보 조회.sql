@@ -1,11 +1,5 @@
 -- 영화 상세 정보 조회
-DELIMITER //
-
-CREATE OR REPLACE PROCEDURE searchMovieDetails(
- 	IN title VARCHAR(100)
-)
-BEGIN
-	SELECT 
+SELECT 
 	   a.name AS '영화제목'
 	 , c.name AS '장르'
 	 , d.name AS '감독명'
@@ -17,11 +11,6 @@ BEGIN
   JOIN genre c ON a.genre_code = c.code
   JOIN director d ON a.director_code = d.code
   JOIN actor e ON b.actor_code = e.code
- WHERE a.name = title
+ WHERE a.name = '퍼스트클래스'
 GROUP BY a.code;
-END //
-
-DELIMITER ;
-
-CALL searchMovieDetails('퍼스트클래스'); 
 

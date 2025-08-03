@@ -12,8 +12,8 @@ BEGIN
     IF NEW.report_count = 30 THEN
        
         IF OLD.name IS NOT NULL AND OLD.id_number IS NOT NULL AND NEW.status != 'banned' THEN
-            INSERT INTO blacklist (name, id_number)
-            VALUES (OLD.name, OLD.id_number);
+            INSERT INTO blacklist (code, name, id_number)
+            VALUES (OLD.code, OLD.name, OLD.id_number);
         END IF;
         
         SET NEW.status = 'banned';

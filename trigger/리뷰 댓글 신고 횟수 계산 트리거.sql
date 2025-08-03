@@ -26,5 +26,3 @@ BEGIN
 END //
 
 DELIMITER ;
-
-
