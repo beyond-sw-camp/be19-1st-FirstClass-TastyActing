@@ -168,6 +168,11 @@
 ---
 ## 3. 서버 구축
 
+<img src = "./image/리눅스ddl.png" width = "1000"> </img>
+<img src = "./image/리눅스insert.png" width = "1000"> </img>
+<img src = "./image/리눅스slave1.png" width = "1000"> </img>
+<img src = "./image/리눅스slave2.png" width = "1000"> </img> <br>
+
 ---
 ## 4. DDL
 
