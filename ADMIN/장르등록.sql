@@ -1,21 +1,8 @@
--- 장르 등록
+-- 장르 등록 
+INSERT
+  INTO genre 
+       (name)
+VALUES
+('스포츠'); 
 
-delimiter //
-CREATE OR REPLACE PROCEDURE insertGenre(
-       IN g_name VARCHAR(50)
-)
-BEGIN
-   INSERT
-     INTO genre
-   (
-          NAME
-   )
-   VALUES
-   (
-          g_name
-   );  
-END //
-delimiter ;
-
-CALL insertGenre('스포츠');
 
