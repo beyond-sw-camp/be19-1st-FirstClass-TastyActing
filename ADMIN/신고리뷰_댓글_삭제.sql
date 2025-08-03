@@ -9,17 +9,17 @@ CREATE OR REPLACE PROCEDURE processReport(
 BEGIN
 	
     IF category_code = 1 THEN
-        DELETE 
-		  FROM movie_review 
+        UPDATE movie_review
+           SET is_deleted = 1
 		 WHERE code = post_code;
 		 
     ELSEIF category_code = 2 THEN
-        DELETE 
-		  FROM actor_review 
+        UPDATE actor_review
+           SET is_deleted = 1
 		 WHERE code = post_code;
     ELSEIF category_code = 3 THEN
-        DELETE 
-		  FROM comment 
+        UPDATE comment
+           SET is_deleted = 1
 		 WHERE code = post_code;
     END IF;
     

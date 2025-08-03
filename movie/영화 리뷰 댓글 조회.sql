@@ -14,9 +14,10 @@ BEGIN
 	  JOIN movie_review b ON a.movie_review_code = b.code
 	  JOIN user c ON a.user_code = c.code
 	  JOIN movie d ON b.movie_code = d.code
-	 WHERE d.code = movie_code;
+	 WHERE d.code = movie_code AND a.is_deleted = FALSE;
 END //
 
 DELIMITER ;
 
 CALL searchCommentByReview(15);
+
