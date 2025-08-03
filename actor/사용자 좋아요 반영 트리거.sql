@@ -37,13 +37,3 @@ BEGIN
 END //
 
 delimiter ;
-
--- 김민준 카운터 확인
-SELECT name, like_count FROM user WHERE code = 1;
-
--- 좋아요 취소 실행 , 1번째 리뷰의 like_count 줄어듦을 확인
-CALL toggleLike(2, 1, 1);
-SELECT * FROM movie_review;
-
--- 김민준 카운트 다시 확인
-SELECT name, like_count FROM user WHERE code = 1;
