@@ -370,6 +370,11 @@ CREATE TABLE blacklist (
 CREATE INDEX idx_movie_name ON movie(name);
 CREATE INDEX idx_actor_name ON actor(name);
 ```
+
+</div>
+</details>
+
+<br>
 ---
 ## 5. 테스트 케이스
 
