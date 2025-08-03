@@ -1,6 +1,8 @@
 # 연기맛집 - 영화 평점 사이트
-![배너](./image/banner.png)
 
+<img width="1322" alt="Image" src="./image/banner.png" />
+
+<br>
 
 ---
 
