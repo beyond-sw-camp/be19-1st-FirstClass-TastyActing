@@ -1,6 +1,8 @@
 # 연기맛집 - 영화 평점 사이트
-![배너](./images/banner.png)
 
+<img width="1322" alt="Image" src="./image/banner.png" />
+
+<br>
 
 ---
 
@@ -10,7 +12,7 @@
 
 |   |   |   |   |   |
 | :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------------------: | :-----------------------------------------------------------: | :--------------------------------------------------------------: |
-|      <img src="https://avatars.githubusercontent.com/u/76045552?v=4" width="120px;" alt=""/>      |      <img src="https://avatars.githubusercontent.com/u/171325395?v=4" width="120px;" alt=""/>      |            <img src="https://avatars.githubusercontent.com/u/150048350?v=4" width="120px;" alt=""/>            |    <img src="https://avatars.githubusercontent.com/u/150311355?v=4" width="120px;" alt=""/>     |      <img src="https://avatars.githubusercontent.com/u/112924560?v=4" width="120px;" alt=""/>      |
+|      <img src="./image/jeong.jpg" width="120px;" alt=""/>      |      <img src="./image/paik.jpeg" width="120px;" alt=""/>      |            <img src="./image/lee.jpeg" width="120px;" alt=""/>            |    <img src="./image/byun.jpeg" width="120px;" alt=""/>     |      <img src="./image/nam.jpg" width="120px;" alt=""/>      |
 |      [정유진](https://github.com/YujinJeong1006)      |      [백준승](https://github.com/seoguhoe2)      |      [이순우](https://github.com/SoonWooLee1)      |      [변민철](https://github.com/bynmch)      |      [남우경](https://github.com/woo-kyoung-nam)      |
 
 </div>
