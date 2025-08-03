@@ -67,7 +67,7 @@ CREATE TABLE actor (
     filename VARCHAR(255) NULL,
     re_name VARCHAR(255) NULL,
     path VARCHAR(255) NULL,
-    date DATETIME NULL,
+	date DATETIME DEFAULT CURRENT_TIMESTAMP,
    is_deleted BOOLEAN NOT NULL DEFAULT FALSE
 );
 
@@ -116,8 +116,8 @@ CREATE TABLE actor_review (
     score DOUBLE NOT NULL,
     content VARCHAR(255) NULL,
     date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    report_count INTEGER NOT NULL,
-    like_count INTEGER NOT NULL,
+    report_count INTEGER NOT NULL DEFAULT 0,
+    like_count INTEGER NOT NULL DEFAULT 0,
     is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
     movie_code INTEGER NOT NULL,
     actor_code INTEGER NOT NULL,
@@ -187,3 +187,8 @@ CREATE TABLE blacklist (
     PRIMARY KEY (code),
     FOREIGN KEY (code) REFERENCES user(code)
 );
+
+-- 인덱스
+CREATE INDEX idx_movie_name ON movie(name);
+CREATE INDEX idx_actor_name ON actor(name);
+

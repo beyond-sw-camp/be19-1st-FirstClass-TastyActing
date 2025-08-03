@@ -138,7 +138,7 @@ VALUES
 ('부산행', '2016-07-20', 0, '15세', TRUE, 'train_to_busan.jpg', 'train_to_busan_2016.jpg', '/uploads/movies/', 5, 5),  
 ('스물', '2015-03-25', 0, '15세', TRUE, 'twenty.jpg', 'twenty_2015.jpg', '/uploads/movies/', 3, 1),  -- 드라마
 ('기생충2: 또 다른 침입자', '2025-12-15', 0, '15세', FALSE, 'parasite2.jpg', 'parasite2_2025.jpg', '/uploads/movies/', 1, 1), 
-('Interstellar: Beyond Time', '2026-03-01', 0, 'PG-13', FALSE, 'interstellar2.jpg', 'interstellar2_2026.jpg', '/uploads/movies/', 11, 5), 
+('Interstellar: Beyond Time', '2026-03-01', 0, '12세', FALSE, 'interstellar2.jpg', 'interstellar2_2026.jpg', '/uploads/movies/', 11, 5), 
 ('내부자들', '2015-11-19', 0, '청불', TRUE, 'inside_men.jpg', 'inside_men_2015.jpg', '/uploads/movies/', 10, 4),  
 ('광해, 왕이 된 남자', '2012-09-13', 0, '12세', TRUE, 'masquerade.jpg', 'masquerade_2012.jpg', '/uploads/movies/', 7, 1), 
 ('국제시장', '2014-12-17', 0, '12세', TRUE, 'ode_to_my_father.jpg', 'ode_2014.jpg', '/uploads/movies/', 6, 1),  
