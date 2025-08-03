@@ -139,26 +139,32 @@
 
 ## 1-4. WBS
 
+<img src = "./image/wbs.png" width = "1000"> </img> <br>
 ---
 
 ## 1-5. 요구사항 명세서 
 
+<img src = "./image/요구사항1.png" width = "1000"> </img>
+<img src = "./image/요구사항2.png" width = "1000"> </img> <br>
 ---
 ## 1-6. UML
 
-
+<img src = "./image/UML.png" width = "1000"> </img> <br>
 ---
 
 ## 2. DB 모델링
 
 ### 2-1. 개념 모델링
 
+<img src = "./image/scenario.png" width = "1000"> </img> <br>
 ---
 ### 2-2. 논리 모델링
 
+<img src = "./image/논리erd.png" width = "1000"> </img> <br>
 ---
 ### 2-3. 물리 모델링
 
+<img src = "./image/물리erd.png" width = "1000"> </img> <br>
 ---
 ## 3. 서버 구축
 
