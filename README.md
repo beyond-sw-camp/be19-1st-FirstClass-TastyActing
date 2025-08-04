@@ -447,7 +447,6 @@ CREATE INDEX idx_actor_name ON actor(name);
 
 <br>
 
-
 ## 6. 기술 스택
 <div align=center><h1>STACKS</h1></div>
 
