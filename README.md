@@ -402,7 +402,7 @@ CREATE INDEX idx_actor_name ON actor(name);
 
   <details>
     <summary> 리뷰 및 댓글 신고 </summary>
-    <img src = "./gif/리뷰신고.gif" width="800"> </img> 
+    <img src = "./gif/신고개수계산.gif" width="800"> </img> 
   </details>
 
   <details>
@@ -422,7 +422,7 @@ CREATE INDEX idx_actor_name ON actor(name);
 
   <details>
     <summary> 영화/배우 리뷰 좋아요 계산 </summary>
-    <img src = "./gif/좋아요개수계산.gif" width="800"> </img> 
+    <img src = "./gif/좋아요계산.gif" width="800"> </img> 
   </details>
 
   <details>
