@@ -385,8 +385,67 @@ CREATE INDEX idx_actor_name ON actor(name);
 
 ## 5. 테스트 케이스
 
----
+  <details>
+    <summary> 회원가입 </summary>
+    <img src = "./gif/회원가입.gif" width="800"> </img> 
+  </details>
 
+  <details>
+    <summary> 사용자삭제 </summary>
+    <img src = "./gif/사용자삭제.gif" width="800"> </img> 
+  </details>
+
+  <details>
+    <summary> 사용자 활동 정지 및 영구 정지 </summary>
+    <img src = "./gif/정지.gif" width="800"> </img> 
+  </details>
+
+  <details>
+    <summary> 리뷰 및 댓글 신고 </summary>
+    <img src = "./gif/신고개수계산.gif" width="800"> </img> 
+  </details>
+
+  <details>
+    <summary> 배우 출연 장르별 리뷰 조회 </summary>
+    <img src = "./gif/배우장르별리뷰.gif" width="800"> </img> 
+  </details>
+
+  <details>
+    <summary> 배우 출연 장르별 평점 조회 </summary>
+    <img src = "./gif/배우장르별평점.gif" width="800"> </img> 
+  </details>
+
+  <details>
+    <summary> 배우 출연 장르별 영화 조회 </summary>
+    <img src = "./gif/배우장르별출연.gif" width="800"> </img> 
+  </details>
+
+  <details>
+    <summary> 영화/배우 리뷰 좋아요 계산 </summary>
+    <img src = "./gif/좋아요계산.gif" width="800"> </img> 
+  </details>
+
+  <details>
+    <summary> 좋아요 갯수에 따른 등급 부여(프로시저) </summary>
+    <img src = "./gif/좋아요개수등급.gif" width="800"> </img> 
+  </details>
+
+  <details>
+    <summary> 좋아요 갯수에 따른 등급 부여(트리거) </summary>
+    <img src = "./gif/좋아요개수등급갱신.gif" width="800"> </img> 
+  </details>
+
+  <details>
+    <summary> 영화 평점 계산 </summary>
+    <img src = "./gif/평점계산.gif" width="800"> </img> 
+  </details>
+
+  <details>
+    <summary> 상영예정작 </summary>
+    <img src = "./gif/상영예정작예상평점.gif" width="800"> </img> 
+  </details>
+
+<br>
 
 ## 6. 기술 스택
 <div align=center><h1>STACKS</h1></div>
