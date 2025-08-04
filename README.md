@@ -385,6 +385,15 @@ CREATE INDEX idx_actor_name ON actor(name);
 
 ## 5. 테스트 케이스
 
+  <details>
+    <summary> 회원가입 </summary>
+    <img src = "./gif/회원가입.gif" width="600"> </img> 
+  </details>
+  <details>
+    <summary> 사용자삭제 </summary>
+    <img src = "./gif/사용자삭제" width="600"> </img> 
+  </details>
+
 ---
 
 
