@@ -154,7 +154,7 @@
 
 ## 2. DB 모델링
 
-### 2-1. 개념 모델링
+### 2-1. 시나리오
 
 <img src = "./image/scenario.png" width = "1000"> </img> <br>
 ---
